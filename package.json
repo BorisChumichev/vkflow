@@ -1,0 +1,19 @@
+{
+  "name": "nvsp-collect-vk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "ramda": "^0.24.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
+}

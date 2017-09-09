@@ -1,10 +1,10 @@
 {
-  "name": "nvsp-collect-vk",
+  "name": "vkstream",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,10 @@
     "dotenv": "^4.0.0",
     "ramda": "^0.24.1",
     "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.1",
+    "url-assembler": "^1.2.9"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0"
   }
 }

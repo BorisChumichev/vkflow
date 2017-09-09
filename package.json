@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "nyc ava"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,7 @@
     "url-assembler": "^1.2.9"
   },
   "devDependencies": {
-    "ava": "^0.22.0"
+    "ava": "^0.22.0",
+    "nyc": "^11.2.1"
   }
 }

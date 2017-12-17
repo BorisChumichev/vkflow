@@ -12,7 +12,9 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "dotenv": "^4.0.0",
+    "html5-websocket": "^2.0.2",
     "ramda": "^0.24.1",
+    "reconnecting-websocket": "^3.2.2",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
     "url-assembler": "^1.2.9"

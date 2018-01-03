@@ -36,6 +36,8 @@ const createWSS = connectionHandler => {
 const messagingWS = () => createWSS(
   async ws => {
     await delay(MESSAGE_DELAY)
+    ws.send(MESSAGE_SERVICE)
+    await delay(MESSAGE_DELAY)
     ws.send(MESSAGE_POST)
   }
 )

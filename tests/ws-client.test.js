@@ -28,6 +28,18 @@ test('Emits a socket initialization error if it occures', async t => {
   })
 })
 
+test('Can optionally listen to service messages', async t => {
+  const connectionString = VKWSServerMock.serviceWS()
+    , stream = new VKStream(connectionString, { socket: { omitServiceMessages: false } })
+
+  await new Promise((resolve, reject) => {
+    stream.on('data', () => {
+      t.pass()
+      resolve()
+    })
+  })
+})
+
 test('Emits an error if receives invalid message', async t => {
   const connectionString = VKWSServerMock.invalidWS()
     , stream = new VKStream(connectionString)

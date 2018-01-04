@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc ava"
+    "test": "nyc ava --serial"
   },
   "keywords": [],
   "author": "",

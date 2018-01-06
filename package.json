@@ -23,6 +23,7 @@
   "homepage": "https://github.com/BorisChumichev/vkflow",
   "dependencies": {
     "bluebird": "^3.5.0",
+    "capture-stack-trace": "^1.0.1",
     "dotenv": "^4.0.0",
     "html5-websocket": "^2.0.2",
     "ramda": "^0.24.1",

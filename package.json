@@ -1,14 +1,26 @@
 {
   "name": "vkstream",
   "version": "1.0.0",
-  "description": "",
+  "description": "VK Streamin API client for Node",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BorisChumichev/vkstream"
+  },
   "scripts": {
     "test": "nyc ava --serial"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "vk",
+    "vkontakte",
+    "streaming"
+  ],
+  "author": "= <=> (http://www.github.com/BorisChumichev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BorisChumichev/vkstream/issues"
+  },
+  "homepage": "https://github.com/BorisChumichev/vkstream",
   "dependencies": {
     "bluebird": "^3.5.0",
     "dotenv": "^4.0.0",
@@ -26,6 +38,8 @@
     "ws": "^3.3.3"
   },
   "nyc": {
-    "include": ["lib"]
+    "include": [
+      "lib"
+    ]
   }
 }

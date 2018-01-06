@@ -31,7 +31,7 @@ const animalsFlow = vkflow(
 animalsFlow.on('data', data => console.log(data));
 ```
 
-Каждое событие `'data'` содержит одно [сообщение](https://vk.com/dev/streaming_api_docs_2?f=7.%20%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) потока в виде строки формата JSON. [Сервисные сообщения](https://vk.com/dev/streaming_api_docs_2?f=7.1.%20Service%20message) игнорируются. Указанные правила фильтрации заменят собой те, что были заданы для этого потока ранее, если такие есть. При разрывах сетевого соедиения vkflow автоматически выполнит переподключение. При возникновении [ошибок](https://vk.com/dev/streaming_api_docs_2?f=8.%20%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D0%B1%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85) сработает событие `'error'` с соответствующим объектом ошибки.
+Каждое событие `'data'` содержит одно [сообщение](https://vk.com/dev/streaming_api_docs_2?f=7.%20%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) потока в виде строки формата JSON. [Сервисные сообщения](https://vk.com/dev/streaming_api_docs_2?f=7.1.%20Service%20message) игнорируются. Указанные правила фильтрации заменят собой те, что были заданы для этого потока ранее, если такие есть. При разрывах соединения `vkflow` автоматически выполнит переподключение. При возникновении [ошибок](https://vk.com/dev/streaming_api_docs_2?f=8.%20%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D0%B1%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85) сработает событие `'error'` с соответствующим объектом ошибки.
 
 Объект, который создаёт фабрика, имплементирует [Readable Stream](https://nodejs.org/api/stream.html#stream_readable_streams), поэтому для работы с ним можно использовать не только, событийный подход, но и потоковый.
 
@@ -132,8 +132,8 @@ const { authWithToken } = require('vkflow').VKStreamingAPI;
 - `highWaterMark` (Number) — размер [буффера](https://nodejs.org/api/stream.html#stream_readable_readablehighwatermark) сообщений. Default: `32768`;
 - `socket.debug` (Boolean) — включение режима логирования (через console.debug()) Default: `false`;
 - `socket.omitServiceMessages` (Boolean) — игнорировать или нет [сервисные сообщения](https://vk.com/dev/streaming_api_docs_2?f=7.1.%20Service%20message) Default: `true`;
-- `socket.reconnectInterval` (Number) — стартовая преиодичность попыток переподключения обрыве соединения. Default: `1e3`;
-- `socket.maxReconnectInterval` (Number) — максимальная преиодичность попыток переподключения обрыве соединения. Default: `3e4`;
+- `socket.reconnectInterval` (Number) — стартовая периодичность попыток переподключения обрыве соединения. Default: `1e3`;
+- `socket.maxReconnectInterval` (Number) — максимальная периодичность попыток переподключения обрыве соединения. Default: `3e4`;
 - `socket.reconnectDecay` (Number) — множитель паузы между последующими попытками подключения. Default: `1.5`;
 - `socket.timeoutInterval` (Number) — время таймаута одной попытки подключения. Default: `2e3`;
 - `socket.maxReconnectAttempts` (Number) — лимит количества попыток подключения. Default: `null` (нет лимита попыток)

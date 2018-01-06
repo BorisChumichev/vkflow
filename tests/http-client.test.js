@@ -73,7 +73,9 @@ test('Adds rules', async t => {
 test('Deletes the rules', async t => {
   const rule = sampleRule()
     , { endpoint, key } = await HTTPClient.authWithToken(process.env['VK_ACCESS_TOKEN'])
-    , response = await HTTPClient.postRule(endpoint, key, rule)
+  
+  await HTTPClient.postRule(endpoint, key, rule)
+  const response = await HTTPClient.deleteRule(endpoint, key, { tag: rule.rule.tag })
 
   t.true(response.code === 200)
   t.pass()

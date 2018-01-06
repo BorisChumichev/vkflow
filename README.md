@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BorisChumichev/vkflow.svg?branch=master)](https://travis-ci.org/BorisChumichev/vkflow) [![Coverage Status](https://coveralls.io/repos/github/BorisChumichev/vkflow/badge.svg?branch=master)](https://coveralls.io/github/BorisChumichev/vkflow?branch=master)
+
 # VK Streaming API клиент для Node
 
 Библиотека реализует два интерфейса для работы с Streaming API ВКонтакте:

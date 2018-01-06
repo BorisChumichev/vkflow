@@ -34,6 +34,7 @@
   "devDependencies": {
     "ava": "^0.22.0",
     "await-delay": "^1.0.0",
+    "coveralls": "^3.0.0",
     "nyc": "^11.2.1",
     "ws": "^3.3.3"
   },

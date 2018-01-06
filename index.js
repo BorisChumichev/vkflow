@@ -1,8 +1,8 @@
-const vkstream = require('./lib/factory')
+const vkflow = require('./lib/factory')
   , WSClient = require('./lib/ws-client')
   , HTTPClient = require('./lib/http-client')
 
-vkstream.VKWebSocket = WSClient
-vkstream.VKStreamingAPI = HTTPClient
+vkflow.VKWebSocket = WSClient
+vkflow.VKStreamingAPI = HTTPClient
 
-module.exports = vkstream
+module.exports = vkflow

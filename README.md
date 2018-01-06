@@ -2,25 +2,25 @@
 
 Библиотека реализует два интерфейса для работы с Streaming API ВКонтакте:
 
-1. Фабрика `vkstream` — позволяет легко создать поток с желаемым набором [правил](https://vk.com/dev/streaming_api_docs?f=2.%20%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB) и считывать из него сообщения;
-2. Более низкоуровневые объекты `VKStreamingAPI` и `VKWebSocket` для случаев когда фабрика `vkstream` не даёт достаточной гибкости в работе с API.
+1. Фабрика `vkflow` — позволяет легко создать поток с желаемым набором [правил](https://vk.com/dev/streaming_api_docs?f=2.%20%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB) и считывать из него сообщения;
+2. Более низкоуровневые объекты `VKStreamingAPI` и `VKWebSocket` для случаев когда фабрика `vkflow` не даёт достаточной гибкости в работе с API.
 
 #### Установка
 
 ```
-npm install vkstream
+npm install vkflow
 ```
 
-## Использование фабрики `vkstream`
+## Использование фабрики `vkflow`
 
-Для работы с `vkstream` достаточно вызвать фабрику, передав в качестве параметров [сервисный ключ приложения](https://vk.com/dev/access_token?f=3.%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0) ВКонтакте и массив [правил фильтрации](https://vk.com/dev/streaming_api_docs?f=2.%20%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB).
+Для работы с `vkflow` достаточно вызвать фабрику, передав в качестве параметров [сервисный ключ приложения](https://vk.com/dev/access_token?f=3.%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0) ВКонтакте и массив [правил фильтрации](https://vk.com/dev/streaming_api_docs?f=2.%20%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB).
 
 ##### Пример: чтение и отображение сообщений
 
 ``` javascript
-const vkstream = require('vkstream');
+const vkflow = require('vkflow');
 
-const animalStream = vkstream(
+const animalsFlow = vkflow(
   VK_SERVICE_KEY,
   [ { value: 'кот', tag: 'cats' }
   , { value: 'собака', tag: 'dogs' }
@@ -28,10 +28,10 @@ const animalStream = vkstream(
   ]
 );
 
-animalStream.on('data', data => console.log(data));
+animalsFlow.on('data', data => console.log(data));
 ```
 
-Каждое событие `'data'` содержит одно [сообщение](https://vk.com/dev/streaming_api_docs_2?f=7.%20%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) потока в виде строки формата JSON. [Сервисные сообщения](https://vk.com/dev/streaming_api_docs_2?f=7.1.%20Service%20message) игнорируются. Указанные правила фильтрации заменят собой те, что были заданы для этого потока ранее, если такие есть. При разрывах сетевого соедиения vkstream автоматически выполнит переподключение. При возникновении [ошибок](https://vk.com/dev/streaming_api_docs_2?f=8.%20%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D0%B1%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85) сработает событие `'error'` с соответствующим объектом ошибки.
+Каждое событие `'data'` содержит одно [сообщение](https://vk.com/dev/streaming_api_docs_2?f=7.%20%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) потока в виде строки формата JSON. [Сервисные сообщения](https://vk.com/dev/streaming_api_docs_2?f=7.1.%20Service%20message) игнорируются. Указанные правила фильтрации заменят собой те, что были заданы для этого потока ранее, если такие есть. При разрывах сетевого соедиения vkflow автоматически выполнит переподключение. При возникновении [ошибок](https://vk.com/dev/streaming_api_docs_2?f=8.%20%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D0%B1%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85) сработает событие `'error'` с соответствующим объектом ошибки.
 
 Объект, который создаёт фабрика, имплементирует [Readable Stream](https://nodejs.org/api/stream.html#stream_readable_streams), поэтому для работы с ним можно использовать не только, событийный подход, но и потоковый.
 
@@ -39,15 +39,15 @@ animalStream.on('data', data => console.log(data));
 
 ``` javascript
 const { createWriteStream } = require('fs')
-const vkstream = require('vkstream')
+const vkflow = require('vkflow')
 
-vkstream(VK_SERVICE_KEY, rules)
+vkflow(VK_SERVICE_KEY, rules)
   .pipe(createWriteStream('destination.dat'))
 ```
 
 ## Использование `VKStreamingAPI` и `VKWebSocket`
 
-Фабрика `vkstream` позволяет легко решить задачу чтения потока с предзаданными правилами фильтрации, но если необходимо реализовать иную логику работы с VK Streaming API, то предусмотрены более низкоуровневые сущности `VKStreamingAPI` и `VKWebSocket`.
+Фабрика `vkflow` позволяет легко решить задачу чтения потока с предзаданными правилами фильтрации, но если необходимо реализовать иную логику работы с VK Streaming API, то предусмотрены более низкоуровневые сущности `VKStreamingAPI` и `VKWebSocket`.
 
 ### `VKStreamingAPI`
 
@@ -106,14 +106,14 @@ vkstream(VK_SERVICE_KEY, rules)
 
 ### `VKWebSocket`
 
-`VKWebSocket` — класс для чтения потока через websocket соединение к VK Streaming API. Как и объект создаваемый фабрикой `vkstream`, инстанс `VKWebSocket` имплементирует Readable Stream, а значит чтение потока может осуществляться как через обработку события `data`, так и с использованием `pipe`.
+`VKWebSocket` — класс для чтения потока через websocket соединение к VK Streaming API. Как и объект создаваемый фабрикой `vkflow`, инстанс `VKWebSocket` имплементирует Readable Stream, а значит чтение потока может осуществляться как через обработку события `data`, так и с использованием `pipe`.
 
 Для инстанцирования `VKWebSocket` необходимо указать адрес соединения и опциональный объект с параметрами подключения.
 
 ##### Пример: чтение потока с использованием VKWebSocket
 
 ``` javascript
-const { authWithToken } = require('vkstream').VKStreamingAPI;
+const { authWithToken } = require('vkflow').VKStreamingAPI;
 
 (async () => {
   const { endpoint, key } = await authWithToken(VK_SERVICE_KEY);
@@ -141,7 +141,7 @@ const { authWithToken } = require('vkstream').VKStreamingAPI;
 ##### Пример: использование `VKStreamingAPI` и `VKWebSocket`
 
 ``` javascript
-const { authWithToken, flushRules, postRule } = require('vkstream').VKStreamingAPI;
+const { authWithToken, flushRules, postRule } = require('vkflow').VKStreamingAPI;
 
 const rules = [
     { tag: 'candidate1', value: 'титов -егор' },

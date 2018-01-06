@@ -1,11 +1,11 @@
 {
-  "name": "vkstream",
+  "name": "vkflow",
   "version": "1.0.0",
   "description": "VK Streamin API client for Node",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BorisChumichev/vkstream"
+    "url": "https://github.com/BorisChumichev/vkflow"
   },
   "scripts": {
     "test": "nyc ava --serial"
@@ -18,9 +18,9 @@
   "author": "= <=> (http://www.github.com/BorisChumichev)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BorisChumichev/vkstream/issues"
+    "url": "https://github.com/BorisChumichev/vkflow/issues"
   },
-  "homepage": "https://github.com/BorisChumichev/vkstream",
+  "homepage": "https://github.com/BorisChumichev/vkflow",
   "dependencies": {
     "bluebird": "^3.5.0",
     "dotenv": "^4.0.0",

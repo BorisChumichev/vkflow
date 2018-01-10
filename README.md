@@ -114,6 +114,7 @@ vkflow(VK_SERVICE_KEY, rules)
 ##### Пример: чтение потока с использованием VKWebSocket
 
 ``` javascript
+const VKWebSocket = require('vkflow').VKWebSocket;
 const { authWithToken } = require('vkflow').VKStreamingAPI;
 
 (async () => {
@@ -142,6 +143,7 @@ const { authWithToken } = require('vkflow').VKStreamingAPI;
 ##### Пример: использование `VKStreamingAPI` и `VKWebSocket`
 
 ``` javascript
+const VKWebSocket = require('vkflow').VKWebSocket;
 const { authWithToken, flushRules, postRule } = require('vkflow').VKStreamingAPI;
 
 const rules = [

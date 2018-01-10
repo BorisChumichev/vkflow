@@ -17,20 +17,19 @@ npm install vkflow
 
 Для работы с `vkflow` достаточно вызвать фабрику, передав в качестве параметров [сервисный ключ приложения](https://vk.com/dev/access_token?f=3.%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0) ВКонтакте и массив [правил фильтрации](https://vk.com/dev/streaming_api_docs?f=2.%20%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB).
 
-##### Пример: чтение и отображение сообщений
+##### Пример: чтение и отображение сообщений с упоминанием «ВКонтакте»
 
 ``` javascript
 const vkflow = require('vkflow');
 
-const animalsFlow = vkflow(
+const stream = vkflow(
   VK_SERVICE_KEY,
-  [ { value: 'кот', tag: 'cats' }
-  , { value: 'собака', tag: 'dogs' }
-  , { value: 'попугай', tag: 'parrots' }
+  [ { value: 'вконтакте', tag: 'cyrillic' }
+  , { value: 'vk', tag: 'latin' }
   ]
 );
 
-animalsFlow.on('data', data => console.log(data));
+stream.on('data', console.log);
 ```
 
 Каждое событие `'data'` содержит одно [сообщение](https://vk.com/dev/streaming_api_docs_2?f=7.%20%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0) потока в виде строки формата JSON. [Сервисные сообщения](https://vk.com/dev/streaming_api_docs_2?f=7.1.%20Service%20message) игнорируются. Указанные правила фильтрации заменят собой те, что были заданы для этого потока ранее, если такие есть. При разрывах соединения `vkflow` автоматически выполнит переподключение. При возникновении [ошибок](https://vk.com/dev/streaming_api_docs_2?f=8.%20%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D0%B1%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85) сработает событие `'error'` с соответствующим объектом ошибки.

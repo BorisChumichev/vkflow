@@ -131,7 +131,7 @@ const { authWithToken } = require('vkflow').VKStreamingAPI;
 
 Возможные параметры подключения:
 
-- `highWaterMark` (Number) — размер [буффера](https://nodejs.org/api/stream.html#stream_readable_readablehighwatermark) сообщений. Default: `32768`;
+- `highWaterMark` (Number) — размер [буфера](https://nodejs.org/api/stream.html#stream_readable_readablehighwatermark) сообщений. Default: `32768`;
 - `socket.debug` (Boolean) — включение режима логирования (через console.debug()) Default: `false`;
 - `socket.omitServiceMessages` (Boolean) — игнорировать или нет [сервисные сообщения](https://vk.com/dev/streaming_api_docs_2?f=7.1.%20Service%20message) Default: `true`;
 - `socket.reconnectInterval` (Number) — стартовая периодичность попыток переподключения обрыве соединения. Default: `1e3`;

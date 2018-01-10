@@ -18,7 +18,7 @@ self.addEventListener("install", function(event) {
            after making HTTP requests for each of them.
         */
         return cache.addAll([
-          '/'
+          '/vkflow/'
         ]);
       })
       .then(function() {

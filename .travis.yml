@@ -1,7 +1,0 @@
-language: node_js
-node_js:
-- '8'
-after_success:
-- "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
-env:
-  secure: Aw7mTFnMJut36+cf1MXmASD6eRxrxUTtWKoBXZmJB1pqKZH8OGKwU/e61F9YeJCRZvIOaVd/X/OtAhPBF2vb7bkcArIM7o0lb/ARozBokGd7C+NmYNGfAvN0WAOW00rLGaXOHArXEmBxviq5ltflln5sMHCstp0WWvaMF/DgotrvGUtNrRcYnQTDMgqMjUVnQzt8C+MOnzXIROCFiuS7DlGQ2U8yl2MwaIw0coc5qdKLQxPjEs8WLsP49IQY9Q8X0+YStB03AkyCU5UL25mcNvXsoiYu+y4EEIcIfztYdel0ACdg49otYhcjsrNe/5Gju0rm8pEa6pb0ImetLSszEd9S8L4HWgR//O+zKCIZx5N7JcZRdV7Nl1pYOprPdX/bhTrdzb2KeYP3ClVVj6TlRhuznl+jbno1pIDag3kjbK21w+6156bEOny14z3AZ9AXNE3r1mZ1fqzH8KPMVVaz/dXgoHkoIL5VK6YuK4VyLo00pCcut4187XjI/Hd2Sk/z/DK1S78ivNmFldGSaMy5HqLjyoBEo5MxCFN7QMNNF/5Kx/44yJ3P8AmqYRtHTb+RxpuVHKCNZA7r1Cxi7v5DC/fjIJ9fb7/0fyvVB0iWOKZHa4XGkhCzKbGAWgRqHMaJ7K6TlW9A50GKMHzAzZYEaHv801PsJNpN/DzQjRMHgOA=

@@ -111,7 +111,7 @@ vkflow(VK_SERVICE_KEY, rules)
 
 #### `VKStreamingAPI.getStats` *(serviceKey:String, params:Object) → Promise*
 
-Позволяет получить статистику для подготовленных и доставленных событий Streaming API. `params` — объект с требованиями к отчету, см. документацию: ![https://vk.com/dev/streaming.getStats](https://vk.com/dev/streaming.getStats).
+Позволяет получить статистику для подготовленных и доставленных событий Streaming API. `params` — объект с требованиями к отчету, см. документацию: [https://vk.com/dev/streaming.getStats](https://vk.com/dev/streaming.getStats).
 
 #### `VKStreamingAPI.getStem` *(serviceKey:String, params:Object) → Promise*
 

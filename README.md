@@ -105,6 +105,18 @@ vkflow(VK_SERVICE_KEY, rules)
 
 Удаляет все правила потока.
 
+#### `VKStreamingAPI.getSettings` *(serviceKey:String) → Promise*
+
+Возвращает объект с единственным полем monthly_limit (string), которое содержит значение tier_1-tier_6 или unlimited и соответствует установленному порогу для приложения.
+
+#### `VKStreamingAPI.getStats` *(serviceKey:String, params:Object) → Promise*
+
+Позволяет получить статистику для подготовленных и доставленных событий Streaming API. `params` — объект с требованиями к отчету, см. документацию: ![https://vk.com/dev/streaming.getStats](https://vk.com/dev/streaming.getStats).
+
+#### `VKStreamingAPI.getStem` *(serviceKey:String, params:Object) → Promise*
+
+Лемматизирует слово, переданное в поле `word` объекта `params`.
+
 ### `VKWebSocket`
 
 `VKWebSocket` — класс для чтения потока через websocket соединение к VK Streaming API. Как и объект создаваемый фабрикой `vkflow`, инстанс `VKWebSocket` имплементирует Readable Stream, а значит чтение потока может осуществляться как через обработку события `data`, так и с использованием `pipe`.

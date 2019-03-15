@@ -68,7 +68,7 @@
       body {
           background-color: #fff;
           padding: 50px;
-          font: 16px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font: 16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue, sans-serif;
           color: #000000;
           font-weight: 400
       }
@@ -87,6 +87,8 @@
       h3,
       h4 {
         margin-left: -25px;
+        margin-top: 40px;
+        margin-bottom: 4px;
       }
 
       h5 {
@@ -421,6 +423,12 @@
 <div class="highlight highlight-source-js"><pre>{ tag<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>candidate2<span class="pl-pds">'</span></span> }</pre></div>
 <h4><a href="#vkstreamingapiflushrules-endpointstring-keystring--promise" aria-hidden="true" class="anchor" id="vkstreamingapiflushrules-endpointstring-keystring--promise"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>flushRules</code> <em>(endpoint:String, key:String) → Promise</em></h4>
 <p>Удаляет все правила потока.</p>
+<h4><a href="#vkstreamingapigetsettings-endpointstring-keystring--promise" aria-hidden="true" class="anchor" id="vkstreamingapigetsettings-endpointstring-keystring--promise"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>getSettings</code> <em>(serviceKey:String) → Promise</em></h4>
+<p>Возвращает объект с единственным полем monthly<em>limit (string), которое содержит значение tier</em>1-tier_6 или unlimited и соответствует установленному порогу для приложения.</p>
+<h4><a href="#vkstreamingapigetstats-endpointstring-keystring--promise" aria-hidden="true" class="anchor" id="vkstreamingapigetstats-endpointstring-keystring--promise"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>getStats</code> <em>(serviceKey:String, params:Object) → Promise</em></h4>
+<p>Позволяет получить статистику для подготовленных и доставленных событий Streaming API. <code>params</code> — объект с требованиями к отчету, см. документацию: <a href="https://vk.com/dev/streaming.getStats" target="_blank">vk.com/dev/streaming.getStats</a>.</p>
+<h4><a href="#vkstreamingapigetstem-endpointstring-keystring--promise" aria-hidden="true" class="anchor" id="vkstreamingapigetstem-endpointstring-keystring--promise"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>getStem</code> <em>(serviceKey:String, params:Object) → Promise</em></h4>
+<p>Лемматизирует слово, переданное в поле <code>word</code> объекта <code>params</code>.</p>
 <h3><a href="#vkwebsocket" aria-hidden="true" class="anchor" id="vkwebsocket"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2 <code>VKWebSocket</code></h3>
 <p><code>VKWebSocket</code> — класс для чтения потока через websocket соединение к&nbsp;Streaming API ВКонтакте. Как и объект создаваемый фабрикой <code>vkflow</code>, инстанс <code>VKWebSocket</code> имплементирует Readable Stream, а значит чтение потока может осуществляться как через обработку события <code>data</code>, так&nbsp;и&nbsp;с&nbsp;использованием <code>pipe</code>.</p>
 <p>Для инстанцирования <code>VKWebSocket</code> необходимо указать адрес соединения и&nbsp;опциональный объект с&nbsp;параметрами подключения.</p>

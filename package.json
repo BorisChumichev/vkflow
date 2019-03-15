@@ -1,6 +1,6 @@
 {
   "name": "vkflow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "VK Streamin API client for Node",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/BorisChumichev/vkflow"
   },
   "scripts": {
-    "test": "nyc ava --serial"
+    "test": "nyc ava --serial --verbose"
   },
   "keywords": [
     "vk",

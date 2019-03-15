@@ -80,3 +80,21 @@ test('Deletes the rules', async t => {
   t.true(response.code === 200)
   t.pass()
 })
+
+test('Gets settings', async t => {
+  const settings = await HTTPClient.getSettings(process.env['VK_ACCESS_TOKEN'])
+  t.true(has('monthly_limit', settings))
+  t.pass()
+})
+
+test('Gets stem', async t => {
+  const result = await HTTPClient.getStem(process.env['VK_ACCESS_TOKEN'], { word: 'вконтакте' })
+  t.true(result.stem === 'вконтакт')
+  t.pass()
+})
+
+test('Gets stats', async t => {
+  const result = await HTTPClient.getStats(process.env['VK_ACCESS_TOKEN'], { type: 'received' })
+  t.true(has('stats', result[0]))
+  t.pass()
+})
